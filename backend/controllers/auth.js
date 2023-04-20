@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import mysql from "mysql";
 import { v4 } from "uuid";
 
-import { db, createToken } from "./helpers.js";
+import db from "./db.js";
 
 const signUp = (req, res) => {
     const { name, email, password } = req.body;
