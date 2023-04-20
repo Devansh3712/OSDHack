@@ -8,7 +8,6 @@ const getUser = (req, res) => {
     const userId = getUserIdByToken(token);
     const sql = "SELECT * FROM users WHERE id = ?";
     const query = mysql.format(sql, [userId]);
-    console.log(query);
     db.query(query, (error, result) => {
         if (error) return res.status(400).json({ error: "Unable to fetch user data" });
         delete result[0].password;

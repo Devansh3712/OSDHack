@@ -5,8 +5,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "start": "node backend/app.js",
-    "dev": "nodemon backend/app.js"
+    "start": "node backend/api/app.js",
+    "dev": "nodemon backend/api/app.js"
   },
   "repository": {
     "type": "git"
