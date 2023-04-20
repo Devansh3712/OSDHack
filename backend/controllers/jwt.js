@@ -16,8 +16,8 @@ const getUserIdByToken = (token) => {
     const query = mysql.format(sql, [userId]);
     db.query(query, (error, result) => {
         if (error) return null;
-        return result[0].id;
     });
+    return userId;
 };
 
 const verifyToken = (req, res, next) => {

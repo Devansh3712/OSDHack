@@ -1,6 +1,7 @@
 import express from "express";
 
 import auth from "./routes/auth.js";
+import user from "./routes/user.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(logger);
 
 // Routers
 app.use("/auth", auth);
+app.use("/user", user);
 app.use((req, res) => {
     res.status(404).json({error: "Endpoint not found"});
 });

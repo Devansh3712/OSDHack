@@ -3,6 +3,7 @@ import mysql from "mysql";
 import { v4 } from "uuid";
 
 import db from "./db.js";
+import { createToken } from "./jwt.js";
 
 const signUp = (req, res) => {
     const { name, email, password } = req.body;
