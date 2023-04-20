@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import mysql from "mysql";
 import { v4 } from "uuid";
 
-import { db, createToken } from "./config.js";
+import { db, createToken } from "./helpers.js";
 
 const signUp = (req, res) => {
     const { name, email, password } = req.body;
@@ -16,11 +16,8 @@ const signUp = (req, res) => {
     };
     const query = mysql.format(sql, values);
     db.query(query, (error, result) => {
-        if (error) {
-            res.status(400).json({ error: "Unable to create user" });
-        } else {
-            res.status(200).json({ message: "User created successfully" });
-        };
+        if (error) return res.status(400).json({ error: "Unable to create user" });
+        return res.status(200).json({ message: "User created successfully" });
     });
 };
 
@@ -29,32 +26,15 @@ const logIn = (req, res) => {
     const sql = "SELECT * FROM users WHERE email = ?";
     const query = mysql.format(sql, [email]);
     db.query(query, (error, result) => {
-        if (error) {
-            res.status(404).json({ error: "User not found" });
-        } else {
-            const valid = bcrypt.compareSync(password, result[0].password);
-            if (!valid) {
-                res.status(403).json({ error: "Incorrect password" });
-            } else {
-                const token = createToken(result[0].id);
-                res.cookie("authorization", token);
-                res.status(200).json({ message: "User logged in" });
-            };
-        };
+        if (error) return res.status(404).json({ error: "User not found" });
+        const valid = bcrypt.compareSync(password, result[0].password);
+        if (!valid) return res.status(403).json({ error: "Incorrect password" });
+        const token = createToken(result[0].id);
+        return res.status(200).json({ token: token });
     });
-};
-
-const logOut = (req, res) => {
-    if (req.cookie?.["authorization"] != undefined) {
-        res.clearCookie("authorization");
-        res.status(200).json({ message: "User logged out" });
-    } else {
-        res.status(403).json({ message: "User not logged in" });
-    };
 };
 
 export {
     signUp,
-    logIn,
-    logOut
+    logIn
 };

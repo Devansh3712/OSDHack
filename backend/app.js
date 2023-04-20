@@ -1,4 +1,3 @@
-import cookieParser from "cookie-parser";
 import express from "express";
 
 import auth from "./routes/auth.js";
@@ -13,7 +12,6 @@ const logger = (req, res, next) => {
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use(logger);
 
 // Routers
