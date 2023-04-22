@@ -7,7 +7,7 @@ const Navbar = () => {
                 <nav className="stroke">
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/">Articles</Link></li>
+                        <li><Link to="/articles">Articles</Link></li>
                         <li><Link to="/">Relax</Link></li>
                         <li><Link to="/">For You</Link></li>
                         <li><Link to="/login">Login</Link></li>

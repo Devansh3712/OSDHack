@@ -1,33 +1,15 @@
 import React from 'react'
-import Home from './Home'
-const Card = () => {
+// import { Link } from 'react-router-dom'
+const Card = (props) => {
+    let { title, symptoms, details, img } = props;
     return (
-        <div className='container my-3 mx-auto' style={{ width: "auto" }}>
-            <div className="row">
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
-                <div className="col-md-3">
-                    <Home />
-                </div>
+
+        <div className="card" style={{ width: "24rem", height: "600px", margin: "10px" }}>
+            <img src={img} style={{ height: "220px" }} className="card-img-top" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title" style={{ margin: "10px" }}><b>{title}</b></h5>
+                <b>Symptoms:- </b><p className="card-text">{symptoms}</p>
+                <b>Details:- </b><p className="card-text">{details}</p>
             </div>
         </div>
     )
