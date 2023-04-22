@@ -32,17 +32,30 @@
   margin: 16px;
 }
 
+/* LOGIN PAGE */
+
 .ctr {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  color: #1597BB;
 }
 
 .inp {
   margin: 10px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.input{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-size: 18px;
+  text-align: center;
+}
+/* ..... */
 
 @keyframes App-logo-spin {
   from {
