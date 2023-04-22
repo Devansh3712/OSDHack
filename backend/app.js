@@ -3,6 +3,7 @@ import express from "express";
 import auth from "./routes/auth.js";
 import user from "./routes/user.js";
 import journal from "./routes/journal.js";
+import therapist from "./routes/therapist.js";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(logger);
 app.use("/auth", auth);
 app.use("/user", user);
 app.use("/journal", journal);
+app.use("/therapist", therapist);
 app.use((req, res) => {
     res.status(404).json({ error: "Endpoint not found" });
 });
