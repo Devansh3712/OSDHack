@@ -65,7 +65,7 @@ const getEntry = async (req, res) => {
     db.query(query, (error, result) => {
         if (error)
             return res.status(400).json({ error: "Unable to find journal" });
-        return res.status(200).json({ message: result[0] });
+        return res.status(200).json({ data: result[0] });
     });
 };
 
