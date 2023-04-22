@@ -28,7 +28,8 @@ h2{
     font-size: 2rem;
     color: #1597BB;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #description{
@@ -36,6 +37,11 @@ h2{
 }
 
 h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #1D2D50;
+}
+
+h4{
     font-family: 'Montserrat', sans-serif;
     color: #1D2D50;
 }
@@ -159,6 +165,11 @@ nav.fill ul li a:hover:after {
     width: 50%;
     margin: auto;
     padding: 50px;
+}
+
+#n-logo{
+    border: 2%;
+    padding-bottom: 30px;
 }
 
 .sleep{
