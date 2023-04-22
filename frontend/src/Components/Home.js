@@ -59,10 +59,11 @@ const Home = () => {
                 <hr /><br />
 
                 <div className="contact-me">
-                    <h2>Get In Touch</h2>
-                    <h4>Don't worry we've got your back. Feel free to reach out!</h4>
-                    <br />
-                    <Link className="btn" href="mailto:barbieagrawal1912@gmail.com">CONTACT US</Link>
+                    <h2>not feeling so great?</h2><br />
+                    <h4>It's alright, everyone has their own ups and downs. Don't worry we've got your back.<br />
+                    Click to join our whatsapp support group.</h4>
+                    <br /><br />
+                    <Link className="btn" to="https://api.whatsapp.com/send?phone=919999666555">JOIN US</Link>
                 </div>
             </div>
 
