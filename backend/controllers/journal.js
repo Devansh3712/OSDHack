@@ -38,7 +38,6 @@ const newEntry = async (req, res) => {
     const { content } = req.body;
     const sentiment = await sentimentAnalysis(content);
     const emotion = await emotionAnalysis(content);
-    console.log(sentiment, emotion);
     const sql = "INSERT INTO journals SET ?";
     const values = {
         id: userId,
