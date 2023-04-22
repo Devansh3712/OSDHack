@@ -9,6 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar';
+import Register from './Components/Register';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/login' element={<Login />} />
+        <Route exact path='/register' element={<Register />} />
       </Routes>
     </Router>
   );
