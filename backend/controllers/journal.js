@@ -49,11 +49,24 @@ const newEntry = async (req, res) => {
     const query = mysql.format(sql, values);
     db.query(query, (error, result) => {
         if (error)
-            return res.status(400).json({ error: "Unable to create journal." });
+            return res.status(400).json({ error: "Unable to create journal" });
         return res
             .status(200)
-            .json({ message: "Journal created successfully." });
+            .json({ message: "Journal created successfully" });
     });
 };
 
-export { newEntry };
+const getEntry = async (req, res) => {
+    const token = req.headers["authorization"];
+    const userId = await getUserIdByToken(token);
+    const { date } = req.body;
+    const sql = "SELECT * FROM journals WHERE id = ? AND createdOn like ?";
+    const query = mysql.format(sql, [userId, date + "%"]);
+    db.query(query, (error, result) => {
+        if (error)
+            return res.status(400).json({ error: "Unable to find journal" });
+        return res.status(200).json({ message: result[0] });
+    });
+};
+
+export { newEntry, getEntry };
