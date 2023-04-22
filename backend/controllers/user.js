@@ -3,9 +3,9 @@ import mysql from "mysql";
 import db from "./db.js";
 import { getUserIdByToken } from "./jwt.js";
 
-const getUser = (req, res) => {
+const getUser = async (req, res) => {
     const token = req.headers["authorization"];
-    const userId = getUserIdByToken(token);
+    const userId = await getUserIdByToken(token);
     const sql = "SELECT * FROM users WHERE id = ?";
     const query = mysql.format(sql, [userId]);
     db.query(query, (error, result) => {

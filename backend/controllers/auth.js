@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 import db from "./db.js";
 import { createToken } from "./jwt.js";
 
-const signUp = (req, res) => {
+const signUp = async (req, res) => {
     const { name, email, password } = req.body;
     const sql = "INSERT INTO users SET ?";
     const values = {
@@ -22,7 +22,7 @@ const signUp = (req, res) => {
     });
 };
 
-const logIn = (req, res) => {
+const logIn = async (req, res) => {
     const { email, password } = req.body;
     const sql = "SELECT * FROM users WHERE email = ?";
     const query = mysql.format(sql, [email]);

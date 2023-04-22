@@ -33,4 +33,3 @@ const emotionAnalysis = async (text) => {
     })
         .then((response) => response.data)
 }
-

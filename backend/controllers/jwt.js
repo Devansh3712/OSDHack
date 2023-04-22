@@ -10,7 +10,7 @@ const secretKey = process.env.SECRET_KEY;
 
 const createToken = (id) => jwt.sign({ id: id }, secretKey);
 
-const getUserIdByToken = (token) => {
+const getUserIdByToken = async (token) => {
     const userId = jwt.verify(token, secretKey).id;
     const sql = "SELECT * FROM users WHERE id = ?";
     const query = mysql.format(sql, [userId]);
@@ -20,12 +20,12 @@ const getUserIdByToken = (token) => {
     return userId;
 };
 
-const verifyToken = (req, res, next) => {
+const verifyToken = async (req, res, next) => {
     const token = req.headers?.["authorization"];
     if (token === undefined) return res.status(400).json({ error: "Authorization token not found" });
     const valid = jwt.verify(token, secretKey);
     if (!valid) return res.status(403).json({ error: "Invalid authorization token" });
-    if (getUserIdByToken(token) === null) return res.status(403).json({ error: "User not found" });
+    if (await getUserIdByToken(token) === null) return res.status(403).json({ error: "User not found" });
     next();
 };
 

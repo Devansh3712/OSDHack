@@ -7,13 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 CREATE TABLE IF NOT EXISTS journals (
-    id CHAR(32) PRIMARY KEY,
+    id CHAR(32) REFERENCES users(id),
     content TEXT NOT NULL,
     createdOn DATETIME NOT NULL,
     sentiment TEXT NOT NULL,
-    emotion TEXT NOT NULL,
-    CONSTRAINT fk_id
-        FOREIGN KEY(id) REFERENCES users(id)
-            ON DELETE CASCADE
-            ON UPDATE CASCADE
-)
+    emotion TEXT NOT NULL
+);
