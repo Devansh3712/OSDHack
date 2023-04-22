@@ -13,11 +13,12 @@ const signUp = async (req, res) => {
         email: email,
         id: v4().replaceAll("-", ""),
         password: bcrypt.hashSync(password, 10),
-        createdOn: new Date()
+        createdOn: new Date(),
     };
     const query = mysql.format(sql, values);
     db.query(query, (error, result) => {
-        if (error) return res.status(400).json({ error: "Unable to create user" });
+        if (error)
+            return res.status(400).json({ error: "Unable to create user" });
         return res.status(200).json({ message: "User created successfully" });
     });
 };
@@ -29,13 +30,11 @@ const logIn = async (req, res) => {
     db.query(query, (error, result) => {
         if (error) return res.status(404).json({ error: "User not found" });
         const valid = bcrypt.compareSync(password, result[0].password);
-        if (!valid) return res.status(403).json({ error: "Incorrect password" });
+        if (!valid)
+            return res.status(403).json({ error: "Incorrect password" });
         const token = createToken(result[0].id);
         return res.status(200).json({ token: token });
     });
 };
 
-export {
-    signUp,
-    logIn
-};
+export { signUp, logIn };
