@@ -1,7 +1,10 @@
-import React from 'react'
+
 import logo from './images/logo-n.png'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
+
     return (
         <div>
             <section style={{ display: "flex" }}>
@@ -19,6 +22,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
             </section>
+
         </div>
     )
 }

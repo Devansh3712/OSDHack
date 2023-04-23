@@ -58,7 +58,7 @@
 
 /* logo in navbar */
 
-.logo{
+.logo {
   margin-top: 10px;
   margin-left: 70px;
 }
@@ -419,6 +419,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.mb-3{
+.mb-3 {
   margin-top: 50px;
+}
+
+/* butons */
+.btu {
+  align-items: center;
+  justify-content: center;
 }
