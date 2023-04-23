@@ -18,15 +18,15 @@ const Login = () => {
                 // If status code not 200 redirect to error page
                 if (response.status !== 200) {
                     console.log()
-                    navigate('/landing');
+                    navigate('/error');
                     return response.json();
                 }
-                else {
-                    navigate('/');
-                }
+
+
             })
             .then((data) => {
                 document.cookie = `token=${data.token}; path=/`;
+                navigate('/');
             })
 
     }

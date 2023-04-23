@@ -9,6 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar';
+import Error from './Components/Error';
 import Register from './Components/Register';
 import Articles from './Components/Articles';
 import Journal from './Components/Journal';
@@ -28,8 +29,10 @@ function App() {
 
       </div>
       <Routes>
-        <Route exact path='/' element={<Landing />} />
-        {/* <Route exact path='/' element={<Journal />} /> */}
+        {/* <Route exact path='/' element={<Landing />} /> */}
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/addjournal' element={<Journal />} />
+        {/* <Route exact path='/landing' element={<Landing />} /> */}
         <Route exact path='/helpline' element={<Helpline />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
@@ -40,6 +43,7 @@ function App() {
         <Route exact path='/bengaluru' element={<Bengaluru />} />
         <Route exact path='/online' element={<Online />} />
         <Route exact path='/both' element={<Both />} />
+        <Route exact path='/erroe' element={<Error />} />
       </Routes>
     </Router>
   );

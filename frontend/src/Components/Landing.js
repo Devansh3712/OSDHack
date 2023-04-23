@@ -10,7 +10,7 @@ const Landing = () => {
             <div>
                 <h2>Hello </h2>
                 <div className="btu" style={{ display: "flex" }}>
-                    <button style={{ margin: "20px" }} type="button" class="btn btn-info">Info</button>
+                    <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="/addjournal">Add Journal</Link></button>
                     <div class="dropdown" style={{ margin: "20px" }}>
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Therapists
@@ -33,6 +33,22 @@ const Landing = () => {
                     </div>
 
                 </div>
+            </div>
+            <div>
+                <h2>Mental Health Tests</h2>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/depression/?ref">Depression Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/anxiety/?ref">Anxiety Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/psychosis/?ref">Psychosis & Schizophrenia Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/ptsd/?ref">PTSD Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/eating-disorder/?ref">Eating Disorder Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/addiction/?ref">Addiction Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/parent/?ref">Parent Test: Your Child’s Mental Health</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/bipolar/?ref">Bipolar Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/youth/?ref">Youth Mental Health Test</Link></button>
+                <button style={{ margin: "20px" }} type="button" class="btn btn-info"><Link to="https://screening.mhanational.org/screening-tools/adhd/?ref">Attention Deficient Hyperactivity Disorder</Link></button>
+
+
+
             </div>
         </>
     )
