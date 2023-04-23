@@ -1,7 +1,25 @@
 import React from 'react'
 
 const Journal = () => {
-
+    const createEnty = async () => {
+        const content = document.getElementById("input-description").value;
+        const cookies = document.cookie.split(";");
+        var token = null;
+        for (var i = 0; i < cookies.length; i++) {
+            if (cookies[i].startsWith(" token=")) token = cookies[i].split(" token=")[1];
+        }
+        // Redirect to error page
+        if (token === null) console.log();
+        await fetch("http://localhost:8000/journal/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            },
+            body: JSON.stringify({ content: content })
+        })
+            .then((response) => response.json());
+    }
     return (
         // import NoteContext from '../Context/notes/NoteContext'
 
@@ -26,12 +44,12 @@ const Journal = () => {
 
                         <div className="mb-3">
                             <label htmlFor="description" name="description" className="form-label" >Your Today's Journal</label>
-                            <input type="text" name="description" className="form-control" id="description" style={{ height: '300px' }}
+                            <input type="text" name="description" className="form-control" id="input-description" style={{ height: '300px' }}
                                 required minLength={5} />
                         </div>
 
 
-                        <button type="submit" className="btn btn-primary" >Add Journal</button>
+                        <button type="submit" className="btn btn-primary" onClick={createEnty}>Add Journal</button>
                     </form>
 
                 </div>

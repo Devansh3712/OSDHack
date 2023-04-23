@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import auth from "./routes/auth.js";
 import user from "./routes/user.js";
@@ -16,6 +17,7 @@ const logger = (req, res, next) => {
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(logger);
 
 // Routers
