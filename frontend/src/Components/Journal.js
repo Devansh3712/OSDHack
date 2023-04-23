@@ -8,6 +8,7 @@ const Journal = () => {
         <>
             <div style={{ display: "flex" }}>
                 <div className="ptr" style={{ display: "inline-block", width: "500px" }}>
+                <h4 className="pnts" > Want to write but don't know how? No worries, follow these points!</h4> <br />
                     <ul>
                         <li><p className="pnts" > Talk About Your Day</p></li>
                         <li><p className="pnts"> Identify Things You’re Grateful For</p></li>
@@ -25,8 +26,8 @@ const Journal = () => {
                     <form>
 
                         <div className="mb-3">
-                            <label htmlFor="description" name="description" className="form-label" >Your Today's Journal</label>
-                            <input type="text" name="description" className="form-control" id="description" style={{ height: '300px' }}
+                            <label htmlFor="description" name="description" className="form-label" ><h4>Your Today's Journal</h4></label>
+                            <input type="text" name="description" className="form-control" id="description" style={{ height: '500px' }}
                                 required minLength={5} />
                         </div>
 
