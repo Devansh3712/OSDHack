@@ -8,8 +8,8 @@ const Card = (props) => {
             <img src={img} style={{ height: "220px" }} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title" style={{ margin: "10px" }}><b>{title}</b></h5>
-                <b>Symptoms:- </b><p className="card-text">{symptoms}</p>
-                <b>Details:- </b><p className="card-text">{details}</p>
+                <b className="sub-head">Symptoms:- </b><p className="card-text">{symptoms}</p>
+                <b className="sub-head">Details:- </b><p className="card-text">{details}</p>
             </div>
         </div>
     )
