@@ -313,11 +313,6 @@ nav.fill ul li a:hover:after {
 
 .btn {
   background: #11cdd4;
-  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
-  background-image: -o-linear-gradient(top, #11cdd4, #11999e);
-  background-image: linear-gradient(to bottom, #11cdd4, #11999e);
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
@@ -330,11 +325,6 @@ nav.fill ul li a:hover:after {
 
 .btn:hover {
   background: #30e3cb;
-  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
-  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
   text-decoration: none;
 }
 
@@ -447,4 +437,27 @@ body {
 
 .sub-head {
   color: #354259;
+}
+
+/* landing-page */
+
+.test{
+  color: white;
+  text-decoration: none;
+}
+
+.poem{
+  font-family: 'Nova Oval', cursive;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  color: #46C2CB;
+  font-style: italic;
+}
+
+.qt{
+  width: 50%;
+}
+
+.white-cat{
+  margin-top: 15px;
 }
