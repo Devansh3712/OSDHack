@@ -1,13 +1,28 @@
-import React, { useState } from 'react'
-import mountain from './images/mountain-img.png'
+import React from 'react'
+
 import whitecat from './images/white-cat.png'
+import { PieChart } from 'react-minimal-pie-chart';
+
 
 import { Link } from 'react-router-dom'
 const Landing = () => {
-
+    let data =
+        [
+            { title: 'Positive', value: 60, color: '#43A19E' },
+            { title: 'Negative', value: 10, color: '#7B43A1' },
+            { title: 'Neutral', value: 20, color: '#F2317A' }
+        ]
+    let dt = [
+        { title: 'Happy', value: 20, color: '#43A19E' },
+        { title: 'Sad', value: 15, color: '#7B43A1' },
+        { title: 'Angry', value: 15, color: '#FF0000' },
+        { title: 'Fear', value: 20, color: '#F2317A' },
+        { title: 'Excited', value: 20, color: '#eab676' },
+        { title: 'Bore', value: 20, color: '#b97455' }
+    ]
     return (
         <>
-                <img className="white-cat" src={whitecat} alt="white-cat" />
+            <img className="white-cat" src={whitecat} alt="white-cat" />
             <div className="qt">
                 <p></p>
             </div>
@@ -56,6 +71,52 @@ const Landing = () => {
 
 
 
+            </div>
+            <h2 style={{ margin: "20px", color: "black" }}>Sentimental And Emotional Analysis</h2>
+            <div style={{ height: "300px", color: "black", display: "flex" }}>
+
+                <PieChart
+                    animate
+                    animationDuration={500}
+                    animationEasing="ease-out"
+                    center={[50, 50]}
+                    data={data}
+                    lengthAngle={360}
+                    lineWidth={40}
+                    paddingAngle={0}
+                    radius={50}
+                    rounded
+                    startAngle={0}
+                    viewBoxSize={[120, 120]}
+                    label={(data) => data.dataEntry.title + " " + data.dataEntry.value + "%"}
+                    labelPosition={65}
+                    labelStyle={{
+                        fontSize: "5px",
+                        fontColor: "white",
+                        fontWeight: "600",
+                    }}
+                />
+                <PieChart
+                    animate
+                    animationDuration={500}
+                    animationEasing="ease-out"
+                    center={[50, 50]}
+                    data={dt}
+                    lengthAngle={360}
+                    lineWidth={40}
+                    paddingAngle={0}
+                    radius={50}
+                    rounded
+                    startAngle={0}
+                    viewBoxSize={[120, 120]}
+                    label={(data) => data.dataEntry.title + " " + data.dataEntry.value + "%"}
+                    labelPosition={65}
+                    labelStyle={{
+                        fontSize: "5px",
+                        fontColor: "white",
+                        fontWeight: "600",
+                    }}
+                />
             </div>
         </>
     )

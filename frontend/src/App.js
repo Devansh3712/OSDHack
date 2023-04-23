@@ -21,6 +21,7 @@ import Kolkata from './Components/Kolkata';
 import Bengaluru from './Components/Bengaluru';
 import Both from './Components/Both';
 import Online from './Components/Online';
+
 function App() {
   return (
     <Router>
@@ -29,10 +30,10 @@ function App() {
 
       </div>
       <Routes>
-        {/* <Route exact path='/' element={<Landing />} /> */}
+
         <Route exact path='/' element={<Home />} />
         <Route exact path='/addjournal' element={<Journal />} />
-        {/* <Route exact path='/landing' element={<Landing />} /> */}
+        <Route exact path='/landing' element={<Landing />} />
         <Route exact path='/helpline' element={<Helpline />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />

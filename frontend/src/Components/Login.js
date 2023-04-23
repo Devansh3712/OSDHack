@@ -17,7 +17,7 @@ const Login = () => {
             .then((response) => {
                 // If status code not 200 redirect to error page
                 if (response.status !== 200) {
-                    console.log()
+                    console.log();
                     navigate('/error');
                     return response.json();
                 }
