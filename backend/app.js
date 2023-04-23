@@ -4,6 +4,7 @@ import auth from "./routes/auth.js";
 import user from "./routes/user.js";
 import journal from "./routes/journal.js";
 import therapist from "./routes/therapist.js";
+import supportGroup from "./routes/supportGroup.js"
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/auth", auth);
 app.use("/user", user);
 app.use("/journal", journal);
 app.use("/therapist", therapist);
+app.use("/support-group", supportGroup);
 app.use((req, res) => {
     res.status(404).json({ error: "Endpoint not found" });
 });
