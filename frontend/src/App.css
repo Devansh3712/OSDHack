@@ -48,13 +48,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.input{
+.input {
   background: transparent;
   border: none;
   border-bottom: 1px solid grey;
   font-size: 18px;
   text-align: center;
 }
+
 /* ..... */
 
 @keyframes App-logo-spin {
@@ -328,4 +329,82 @@ nav.fill ul li a:hover:after {
 
 .copyright {
   color: #aaa;
+}
+
+/* user home */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #ccf3ee;
+}
+
+body {
+  display: grid;
+}
+
+#quote {
+  line-height: 40px;
+  font-size: 2rem;
+  color: #46c2cb;
+  letter-spacing: 5px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.hehe {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.clock {
+  /* background: #131419; */
+  height: 141px;
+  line-height: 80px;
+  text-align: center;
+  float: center;
+  padding: 0 30px;
+  /* box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.05), */
+  /* 3px 3px 5px rgba(0, 0, 0, 0.5); */
+  width: 50%;
+  border-radius: 5px;
+  margin: 20px 10px;
+}
+
+.clock .display {
+  font-size: 60px;
+  color: #46c2cb;
+  letter-spacing: 5px;
+  font-family: "Orbitron", sans-serif;
+}
+
+#lblGreetings {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: #1597bb;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* journal */
+.jrn {
+  margin-left: 280px;
+  margin-top: 30px;
+}
+
+.pnts {
+  text-align: left;
+}
+
+.ptr {
+  margin-left: 50px;
+  margin-top: 50px;
 }

@@ -11,6 +11,7 @@ import {
 import Navbar from './Components/Navbar';
 import Register from './Components/Register';
 import Articles from './Components/Articles';
+import Journal from './Components/Journal';
 function App() {
   return (
     <Router>
@@ -19,7 +20,8 @@ function App() {
 
       </div>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        {/* <Route exact path='/' element={<Home />} /> */}
+        <Route exact path='/' element={<Journal />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/articles' element={<Articles />} />
