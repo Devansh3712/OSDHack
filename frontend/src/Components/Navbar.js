@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <section style={{ display: "flex" }}>
+            <section style={{ display: "flex", backgroundColor: "#CCF3EE" }}>
                 <div className="logo" style={{ display: "flex", width: "60px", height: "60px" }}>
                     <img src={logo} alt="..." />
                 </div>
